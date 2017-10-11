@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class Generator extends Application {
-
+public interface Generator {
+    void attach(Observer o);
+    void detach(Observer o);
+    Integer getValue();
 }

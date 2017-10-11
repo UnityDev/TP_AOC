@@ -7,6 +7,11 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class Display extends Application {
+public class Display {
+
+    public void update(Generator subject)
+    {
+
+    }
 
 }
