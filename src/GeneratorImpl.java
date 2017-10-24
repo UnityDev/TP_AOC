@@ -1,20 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class GeneratorImpl {
 
-    public Integer v;
+    private Integer v;
+    private List<ObservatorGenerator> observers = new ArrayList<>();
 
-    public void attach(Observer o)
-    {
-
+    public void attach(ObservatorGenerator o){
+        this.observers.add(o);
     }
 
-    public void detach(Observer o)
-    {
-
+    public void detach(ObservatorGenerator o){
+        this.observers.remove(o);
     }
 
-    public Integer getValue()
-    {
-        return 0;
+    public Integer getValue(){
+        return v;
     }
 
 }
