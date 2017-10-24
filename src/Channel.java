@@ -6,7 +6,7 @@ public class Channel implements Generator, ObservatorGenerator{
     private Generator generator;
 
     public void update(Generator s){
-        observatorGenerator.update(generator);
+        observatorGenerator.update(s);
     }
 
     @Override
