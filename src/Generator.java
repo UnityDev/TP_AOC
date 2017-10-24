@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public interface Generator {
-    void attach(Observer o);
-    void detach(Observer o);
+    void attach(ObservatorGenerator o);
+    void detach(ObservatorGenerator o);
     Integer getValue();
 }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneratorImpl {
+public class GeneratorImpl{
 
     private Integer v;
     private List<ObservatorGenerator> observers = new ArrayList<>();
@@ -17,5 +17,8 @@ public class GeneratorImpl {
     public Integer getValue(){
         return v;
     }
+
+
+
 
 }

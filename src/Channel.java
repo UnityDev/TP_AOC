@@ -2,24 +2,25 @@
 
 public class Channel implements Generator, ObservatorGenerator{
 
-    public void update(Generator s)
-    {
+    private ObservatorGenerator observatorGenerator;
+    private Generator generator;
 
+    public void update(Generator s){
+        observatorGenerator.update(generator);
     }
 
     @Override
-    public void attach(Observer o) {
-        
+    public void attach(ObservatorGenerator o) {
+        this.observatorGenerator = o;
     }
 
     @Override
-    public void detach(Observer o) {
-
+    public void detach(ObservatorGenerator o) {
+        this.observatorGenerator = null;
     }
 
-    public Integer getValue()
-    {
-        return 0;
+    public Integer getValue() {
+        return this.generator.getValue();
     }
 
 }
