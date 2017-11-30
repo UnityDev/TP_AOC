@@ -5,7 +5,7 @@ public class Channel implements Generator, ObservatorGenerator{
     private ObservatorGenerator observatorGenerator;
     private Generator generator;
 
-    public void update(Generator s){
+    public void update(GeneratorImpl s){
         observatorGenerator.update(s);
     }
 

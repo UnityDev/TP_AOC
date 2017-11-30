@@ -3,14 +3,18 @@ import java.util.List;
 
 public class AtomicDiffusion {
 
-    private Channel channel;
-    private Generator generator;
+    private List<ObservatorGenerator> channels;
+    private GeneratorImpl generator;
 
-    public void configure() {
-        this.channel = new Channel();
+    public void configure(GeneratorImpl generator) {
+        this.channels = new LinkedList<>();
+        this.generator = generator;
     }
 
     public void execute() {
-        this.channel.update(this.generator);
+        this.channels = this.generator.getChannels();
+        for (ObservatorGenerator observator : this.channels) {
+            observator.update(this.generator);
+        }
     }
 }

@@ -1,13 +1,19 @@
-public class SequentielleDiffusion {
-    private Generator generator;
-    private Channel channel;
+import java.util.LinkedList;
+import java.util.List;
 
-    public void configure(Generator generator) {
+public class SequentielleDiffusion {
+    private List<ObservatorGenerator> channels;
+    private GeneratorImpl generator;
+
+    public void configure(GeneratorImpl generator) {
+        this.channels = new LinkedList<>();
         this.generator = generator;
-        this.channel = new Channel();
     }
 
     public void execute() {
-        channel.update(generator);
+        this.channels = this.generator.getChannels();
+        for (ObservatorGenerator observator : this.channels) {
+            observator.update(this.generator);
+        }
     }
 }

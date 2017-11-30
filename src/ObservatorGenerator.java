@@ -1,3 +1,3 @@
 public interface ObservatorGenerator {
-    void update(Generator subject);
+    void update(GeneratorImpl subject);
 }
