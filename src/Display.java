@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class Display implements ObservatorGenerator{
 
-    public void update(Generator subject)
+    public void update(GeneratorImpl subject)
     {
 
     }
