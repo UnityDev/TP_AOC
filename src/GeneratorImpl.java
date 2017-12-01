@@ -4,7 +4,7 @@ import java.util.List;
 
 public class GeneratorImpl{
 
-    private Integer v;
+    private String v;
     private List<ObservatorGenerator> channels = new ArrayList<>();
     private AlgoDiffusion algo;
 
@@ -16,7 +16,7 @@ public class GeneratorImpl{
         this.channels.remove(o);
     }
 
-    public Integer getValue(){
+    public String getValue(){
         return v;
     }
 
