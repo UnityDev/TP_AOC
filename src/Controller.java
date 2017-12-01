@@ -19,6 +19,12 @@ public class Controller implements Initializable {
     @FXML
     private TextField display4;
 
+    @FXML
+    private Button startButton;
+
+    @FXML
+    private Button stopButton;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     public void start(Stage app) throws Exception{
         Parent xml = FXMLLoader.load(getClass().getResource("app.fxml"));
-        app.setScene(new Scene(xml, 360, 360));
+        app.setScene(new Scene(xml, 800, 600));
         app.show();
     }
 
