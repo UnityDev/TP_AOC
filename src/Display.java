@@ -35,7 +35,7 @@ public class Display implements ObservatorGenerator {
         Future<String> future = gen.getValue();
         try {
             this.text.set(future.get());
-            Logger.getGlobal().info("Afficheur " + text);
+            Logger.getGlobal().info("Display result:  " + text);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

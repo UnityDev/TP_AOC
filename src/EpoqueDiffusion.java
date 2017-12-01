@@ -48,7 +48,7 @@ public class EpoqueDiffusion implements AlgoDiffusion {
      * @return generator's value concatenate to a date.
      */
     public String readValue(ObservatorGeneratorAsync channel) {
-        String date = " - "+LocalDateTime.now().getHour()+" : " +LocalDateTime.now().getMinute()+" : " +LocalDateTime.now().getSecond();
-        return this.generator.getValue()+date;
+        String date = LocalDateTime.now().getHour()+" - " +LocalDateTime.now().getMinute()+" : " +LocalDateTime.now().getSecond();
+        return this.generator.getValue()+ ' ' + '-' + ' ' + date;
     }
 }

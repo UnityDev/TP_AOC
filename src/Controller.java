@@ -58,7 +58,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        ScheduledExecutorService sch = Executors.newScheduledThreadPool(10);
+        ScheduledExecutorService sch = Executors.newScheduledThreadPool(16);
 
         // Instanciate the generator
         GeneratorImpl generator = new GeneratorImpl(sch);
