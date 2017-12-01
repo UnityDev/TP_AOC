@@ -12,6 +12,14 @@
                 <Font name="Roboto Bold" size="20"/>
             </font>
         </Text>
+        <RadioButton fx:id="atoBtn" layoutX="100" layoutY="45" mnemonicParsing="false" selected="true" text="Atomic">
+            <toggleGroup>
+                <ToggleGroup fx:id="algo" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="seqBtn" layoutX="350" layoutY="45" mnemonicParsing="false" text="Sequential" toggleGroup="$algo" />
+        <RadioButton fx:id="epBtn" layoutX="600" layoutY="45" mnemonicParsing="false" text="Epoque" toggleGroup="$algo" />
+
         <Button fx:id="startButton" layoutX="325" layoutY="80" prefWidth="50" text="Start"/>
         <Button fx:id="stopButton" layoutX="425" layoutY="80" prefWidth="50" text="Stop"/>
         <TextField fx:id="display1" editable="false" layoutX="100" layoutY="125" prefWidth="300" prefHeight="200"  alignment="center" text="1">

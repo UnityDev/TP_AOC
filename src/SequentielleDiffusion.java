@@ -14,7 +14,7 @@ import java.util.List;
  *
  */
 
-public class SequentielleDiffusion {
+public class SequentielleDiffusion implements AlgoDiffusion {
     private List<ObservatorGenerator> channels;
     private GeneratorImpl generator;
     private String copyValue;

@@ -13,7 +13,7 @@ import java.util.List;
  *
  */
 
-public class AtomicDiffusion {
+public class AtomicDiffusion implements AlgoDiffusion{
 
     private List<ObservatorGenerator> channels;
     private GeneratorImpl generator;
