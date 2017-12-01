@@ -3,7 +3,11 @@
 public class Channel implements Generator, ObservatorGenerator{
 
     private ObservatorGenerator observatorGenerator;
-    private Generator generator;
+    private GeneratorImpl generator;
+
+    public Channel(GeneratorImpl generator ){
+        this.generator = generator;
+    }
 
     public void update(GeneratorImpl s){
         observatorGenerator.update(s);
