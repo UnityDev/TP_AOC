@@ -23,7 +23,7 @@ public class Channel implements Generator, ObservatorGenerator{
         this.observatorGenerator = null;
     }
 
-    public Integer getValue() {
+    public String getValue() {
         return this.generator.getValue();
     }
 

@@ -4,13 +4,52 @@ import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * GenerateurImpl is an observable who creates a value.
+ *
+ *
+ * @author Alexis Renault
+ * @author Antoine Ravet
+ * @version 1.0
+ *
+ */
+
 public class GeneratorImpl{
 
+    /**
+     * generate value
+     */
     private Integer v;
+
+    /**
+     * Channels that observe the generator
+     */
     private List<ObservatorGenerator> channels = new ArrayList<>();
+
+    /**
+     * Algorithm picked to create the value
+     */
     private AlgoDiffusion algo;
+
+    /**
+     * boolean, true if the generator is on
+     */
     private boolean generatorOn;
+
+    /**
+     * generator's scheduler
+     */
     private ScheduledExecutorService scheduler;
+
+
+    /**
+     * Class' constructor
+     *
+     * @param scheduler
+     */
+    public GeneratorImpl(ScheduledExecutorService scheduler){
+        this.scheduler = scheduler;
+    }
 
     public void attach(ObservatorGenerator o){
         this.channels.add(o);
@@ -20,14 +59,14 @@ public class GeneratorImpl{
         this.channels.remove(o);
     }
 
-    public Integer getValue(){
-        return v;
+    public String getValue(){
+        return Integer.toString(v);
     }
 
     public void setValue(){
         // Si le générateur est en fonctionnement
         if(generatorOn){
-            this.v++;
+            v++;
         }
     }
 
@@ -51,7 +90,7 @@ public class GeneratorImpl{
         this.generatorOn = true;
         // Configure function creates the variables
         algo.configure(this);
-        this.v = 0;
+        v = 0;
         // New value each 2 seconds
         this.scheduler.scheduleAtFixedRate(()-> {
             this.setValue();

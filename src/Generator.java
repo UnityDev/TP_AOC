@@ -12,5 +12,5 @@ import java.util.List;
 public interface Generator {
     void attach(ObservatorGenerator o);
     void detach(ObservatorGenerator o);
-    Integer getValue();
+    String getValue();
 }
