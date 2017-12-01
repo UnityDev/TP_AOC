@@ -11,7 +11,7 @@ public class Display implements ObservatorGenerator{
 
     @Override
     public void update(GeneratorImpl canalGenerateur){
-        //Todo Ajouter la synchro ici ( outil future vu en TD )
+        canalGenerateur.getValue();
     }
 
     public StringProperty getText(){
