@@ -24,7 +24,7 @@ public class Channel implements Generator, ObservatorGenerator{
     }
 
     public String getValue() {
-        return this.generator.getValue();
+        return this.generator.getValue(this);
     }
 
 }
