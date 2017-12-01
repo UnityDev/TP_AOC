@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefWidth="360" prefHeight="360"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
-    <Pane prefWidth="360" prefHeight="360">
-            <TextField fx:id="display1"  prefWidth="180" prefHeight="180" >
-                <font>
-                    <Font size="50" />
-                </font>
-            </TextField>
-            <TextField fx:id="display2" layoutX="180"  prefWidth="180" prefHeight="180">
-                <font>
-                    <Font size="50" />
-                </font>
-            </TextField>
-            <TextField fx:id="display3" focusTraversable="false" layoutY="180" prefWidth="180" prefHeight="180" >
-                <font>
-                    <Font size="50" />
-                </font>
-            </TextField>
-            <TextField fx:id="display4" focusTraversable="false" layoutX="180" layoutY="180" prefWidth="180" prefHeight="180">
-                <font>
-                    <Font size="50" />
-                </font>
-            </TextField>
+<AnchorPane prefWidth="800" prefHeight="600" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller">
+    <Pane prefWidth="800" prefHeight="600">
+        <Text layoutX="20" layoutY="30" text="TP AOC - RAVET / RENAULT">
+            <font>
+                <Font name="Roboto Bold" size="20"/>
+            </font>
+        </Text>
+        <Button fx:id="startButton" layoutX="325" layoutY="80" prefWidth="50" text="Start"/>
+        <Button fx:id="stopButton" layoutX="425" layoutY="80" prefWidth="50" text="Stop"/>
+        <TextField fx:id="display1" editable="false" layoutX="100" layoutY="125" prefWidth="300" prefHeight="200"  alignment="center" text="1">
+            <font>
+                <Font size="60"/>
+            </font>
+        </TextField>
+        <TextField fx:id="display2" editable="false" layoutX="400" layoutY="125" prefWidth="300" prefHeight="200"  alignment="center" text="1">
+            <font>
+                <Font size="60"/>
+            </font>
+        </TextField>
+        <TextField fx:id="display3" editable="false" layoutX="100" layoutY="325" prefWidth="300" prefHeight="200" alignment="center" text="1">
+            <font>
+                <Font size="60"/>
+            </font>
+        </TextField>
+        <TextField fx:id="display4" editable="false" layoutX="400" layoutY="325" prefWidth="300" prefHeight="200" alignment="center" text="1">
+            <font>
+                <Font size="60"/>
+            </font>
+        </TextField>
     </Pane>
 </AnchorPane>
