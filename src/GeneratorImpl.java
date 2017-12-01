@@ -69,6 +69,7 @@ public class GeneratorImpl implements Generator {
         // Si le générateur est en fonctionnement
         if (generatorOn) {
             v++;
+            algo.execute();
         }
     }
 

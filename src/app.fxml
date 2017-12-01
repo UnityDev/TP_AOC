@@ -22,24 +22,24 @@
 
         <Button fx:id="startButton" layoutX="325" layoutY="80" prefWidth="50" text="Start"/>
         <Button fx:id="stopButton" layoutX="425" layoutY="80" prefWidth="50" text="Stop"/>
-        <TextField fx:id="display1" editable="false" layoutX="100" layoutY="125" prefWidth="300" prefHeight="200"  alignment="center" text="1">
+        <TextField fx:id="display1" editable="false" layoutX="100" layoutY="125" prefWidth="300" prefHeight="200"  alignment="center">
             <font>
-                <Font size="60"/>
+                <Font size="15"/>
             </font>
         </TextField>
-        <TextField fx:id="display2" editable="false" layoutX="400" layoutY="125" prefWidth="300" prefHeight="200"  alignment="center" text="1">
+        <TextField fx:id="display2" editable="false" layoutX="400" layoutY="125" prefWidth="300" prefHeight="200"  alignment="center">
             <font>
-                <Font size="60"/>
+                <Font size="15"/>
             </font>
         </TextField>
-        <TextField fx:id="display3" editable="false" layoutX="100" layoutY="325" prefWidth="300" prefHeight="200" alignment="center" text="1">
+        <TextField fx:id="display3" editable="false" layoutX="100" layoutY="325" prefWidth="300" prefHeight="200" alignment="center">
             <font>
-                <Font size="60"/>
+                <Font size="15"/>
             </font>
         </TextField>
-        <TextField fx:id="display4" editable="false" layoutX="400" layoutY="325" prefWidth="300" prefHeight="200" alignment="center" text="1">
+        <TextField fx:id="display4" editable="false" layoutX="400" layoutY="325" prefWidth="300" prefHeight="200" alignment="center">
             <font>
-                <Font size="60"/>
+                <Font size="15"/>
             </font>
         </TextField>
     </Pane>
