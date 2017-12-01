@@ -14,14 +14,27 @@ import java.util.List;
  */
 
 public class EpoqueDiffusion implements AlgoDiffusion {
+    /**
+     * List of channels
+     */
     private List<ObservatorGeneratorAsync> channels;
+
+    /**
+     * GenerateurImpl
+     */
     private GeneratorImpl generator;
 
+    /**
+     * @param generator
+     */
     public void configure(GeneratorImpl generator) {
         this.channels = new LinkedList<>();
         this.generator = generator;
     }
 
+    /**
+     * The channels know that the algorithm is over.
+     */
     public void execute() {
         this.channels = this.generator.getChannels();
         // We update the channels
@@ -30,6 +43,10 @@ public class EpoqueDiffusion implements AlgoDiffusion {
         }
     }
 
+    /**
+     * @param channel
+     * @return generator's value concatenate to a date.
+     */
     public String readValue(ObservatorGeneratorAsync channel) {
         String date = " - "+LocalDateTime.now().getHour()+" : " +LocalDateTime.now().getMinute()+" : " +LocalDateTime.now().getSecond();
         return this.generator.getValue()+date;

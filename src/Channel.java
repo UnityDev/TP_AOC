@@ -1,18 +1,44 @@
 import java.util.concurrent.*;
 
+/**
+ * Channel is an interface and it is the proxy in the Proxy design pattern.
+ *
+ * @author Renault Alexis
+ * @author Ravet Antoine
+ * @version 1.0
+ *
+ */
 
 public class Channel implements GeneratorAsync, ObservatorGeneratorAsync {
 
+    /**
+     * Display that observs the channel.
+     */
     private ObservatorGenerator observatorGenerator;
+
+    /**
+     * Generator observed by the canal.
+     */
     private Generator generator;
+
+    /**
+     * Channel's scheduler
+     */
     private ScheduledExecutorService sch;
 
-
+    /**
+     * Constructeur Canal
+     * @param generator
+     * @param sch
+     */
     public Channel(GeneratorImpl generator, ScheduledExecutorService sch) {
         this.generator = generator;
         this.sch = sch;
     }
 
+    /**
+     * @return a void Future
+     */
     @Override
     public Future<Void> update(Generator generateur){
 
@@ -29,6 +55,9 @@ public class Channel implements GeneratorAsync, ObservatorGeneratorAsync {
         this.observatorGenerator = null;
     }
 
+    /**
+     * @return generator's value
+     */
     @Override
     public Future<String> getValue(){
         Callable callable = new GetValue(this, this.generator);

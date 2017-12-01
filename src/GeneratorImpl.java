@@ -57,14 +57,24 @@ public class GeneratorImpl implements Generator {
         this.channels.remove(o);
     }
 
+    /**
+     * @param oAsync
+     * @return generator's value
+     */
     public String getValue(ObservatorGeneratorAsync oAsync) {
         return algo.readValue(oAsync);
     }
 
+    /**
+     * @return generator's value
+     */
     public String getValue() {
         return Integer.toString(v);
     }
 
+    /**
+     * Increments the generator's value
+     */
     public void setValue() {
         // Si le générateur est en fonctionnement
         if (generatorOn) {
@@ -72,26 +82,43 @@ public class GeneratorImpl implements Generator {
         }
     }
 
+    /**
+     * Return a copy of the applications' channels
+     * @return LinkedList de ObservateurGenerateurAsync
+     */
     public List<ObservatorGeneratorAsync> getChannels() {
         LinkedList<ObservatorGeneratorAsync> channelsCopy = new LinkedList<>(this.channels);
         return channelsCopy;
     }
 
+    /**
+     * Set the algorithm that the user picked
+     * @param algo
+     */
     // Algorithm choice
     public void setAlgo(AlgoDiffusion algo) {
         this.algo = algo;
     }
 
+    /**
+     * Restart the generator
+     */
     // Restart the generator
     public void restart() {
         this.generatorOn = true;
     }
 
+    /**
+     * Stop the generator
+     */
     // Stop the generator
     public void stop() {
         this.generatorOn = false;
     }
 
+    /**
+     * Start the generator and initiate the value with a scheduler
+     */
     // Start the generator
     public void start() {
         this.generatorOn = true;
