@@ -1,4 +1,4 @@
 public interface Subject {
-    void attach(ObservatorGenerator o);
-    void detach(ObservatorGenerator o);
+    void attach(ObservatorGeneratorAsync o);
+    void detach(ObservatorGeneratorAsync o);
 }

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class AtomicDiffusion implements AlgoDiffusion{
 
-    private List<ObservatorGenerator> channels;
+    private List<ObservatorGeneratorAsync> channels;
     private GeneratorImpl generator;
 
     public void configure(GeneratorImpl generator) {
@@ -24,18 +24,20 @@ public class AtomicDiffusion implements AlgoDiffusion{
     }
 
     public void execute() {
+        this.generator.stop();
+        // Récupération des canaux du générateur afin de pouvoir les notifier et avoir la liste des 'lecteurs'
         this.channels = this.generator.getChannels();
-        // We update the channels
-        for (ObservatorGenerator observator : this.channels) {
-            observator.update(this.generator);
+        // Notification des canaux
+        for (ObservatorGeneratorAsync oAsync : this.channels) {
+            oAsync.update(this.generator);
         }
     }
 
-    public String readValue(ObservatorGenerator channel) {
+    public String readValue(ObservatorGeneratorAsync channel) {
         // When a channel has read the value, it is remove from the channels list
         this.channels.remove(channel);
         if (this.channels.isEmpty()) {
-            this.generator.start();
+            this.generator.restart();
         }
         return this.generator.getValue();
     }

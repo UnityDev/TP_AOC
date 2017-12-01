@@ -64,10 +64,10 @@ public class Controller implements Initializable {
         GeneratorImpl generator = new GeneratorImpl(sch);
 
         // Instanciate channels
-        Channel channel1 = new Channel(generator);
-        Channel channel2 = new Channel(generator);
-        Channel channel3 = new Channel(generator);
-        Channel channel4 = new Channel(generator);
+        Channel channel1 = new Channel(generator, sch);
+        Channel channel2 = new Channel(generator, sch);
+        Channel channel3 = new Channel(generator, sch);
+        Channel channel4 = new Channel(generator, sch);
 
         // Instanciate displays
         Display display1 = new Display();
@@ -119,7 +119,7 @@ public class Controller implements Initializable {
                 }
 
                 generator.setAlgo(algo);
-                //TODO Lancement du générateur
+                generator.start();
             }
         });
 

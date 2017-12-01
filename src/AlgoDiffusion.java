@@ -4,5 +4,5 @@ public interface AlgoDiffusion {
 
     void execute();
 
-    String readValue(ObservatorGenerator channel);
+    String readValue(ObservatorGeneratorAsync channel);
 }

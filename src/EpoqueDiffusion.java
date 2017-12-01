@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 public class EpoqueDiffusion implements AlgoDiffusion {
-    private List<ObservatorGenerator> channels;
+    private List<ObservatorGeneratorAsync> channels;
     private GeneratorImpl generator;
 
     public void configure(GeneratorImpl generator) {
@@ -25,12 +25,12 @@ public class EpoqueDiffusion implements AlgoDiffusion {
     public void execute() {
         this.channels = this.generator.getChannels();
         // We update the channels
-        for (ObservatorGenerator observator : this.channels) {
-            observator.update(this.generator);
+        for (ObservatorGeneratorAsync oAsync : this.channels) {
+            oAsync.update(this.generator);
         }
     }
 
-    public String readValue(ObservatorGenerator channel) {
+    public String readValue(ObservatorGeneratorAsync channel) {
         String date = " - "+LocalDateTime.now().getHour()+" : " +LocalDateTime.now().getMinute()+" : " +LocalDateTime.now().getSecond();
         return this.generator.getValue()+date;
     }
