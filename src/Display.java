@@ -1,17 +1,20 @@
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Display implements ObservatorGenerator{
 
-    public void update(GeneratorImpl subject)
-    {
+    private StringProperty text;
 
+    public Display(){
+        this.text = new SimpleStringProperty();
     }
 
+    @Override
+    public void update(GeneratorImpl canalGenerateur){
+        //Todo Ajouter la synchro ici ( outil future vu en TD )
+    }
+
+    public StringProperty getText(){
+        return this.text;
+    }
 }

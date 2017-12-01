@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class GeneratorImpl{
 
-    private Integer v;
+    private String v;
     private List<ObservatorGenerator> channels = new ArrayList<>();
     private AlgoDiffusion algo;
     private boolean generatorOn;
@@ -20,7 +20,7 @@ public class GeneratorImpl{
         this.channels.remove(o);
     }
 
-    public Integer getValue(){
+    public String getValue(){
         return v;
     }
 
