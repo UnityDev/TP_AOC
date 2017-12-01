@@ -59,6 +59,10 @@ public class GeneratorImpl{
         this.channels.remove(o);
     }
 
+    public String getValue(ObservatorGenerator channel) {
+        return algo.readValue(channel);
+    }
+
     public String getValue(){
         return Integer.toString(v);
     }
